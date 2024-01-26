@@ -1,0 +1,19 @@
+<div class="note-editor-container" *ngIf="selectedNote">
+  <div class="form-group">
+    <input id="editTitle"
+           class="form-control" 
+           placeholder="Title..."
+           [(ngModel)]="selectedNote.title" 
+           (ngModelChange)="resetAutoSaveTimer()" />
+  </div>
+  <div>
+    <textarea id="editContent" 
+           class="form-control" 
+           placeholder="Content..."
+           rows="5"
+           [(ngModel)]="selectedNote.content" 
+           (ngModelChange)="resetAutoSaveTimer()"></textarea>
+  </div>
+  <button class="btn btn-outline-danger"
+          (click)="deleteNote()">Delete note</button>
+</div>

@@ -1,0 +1,14 @@
+<div class="notes-section-container">
+    <input type="text" 
+           [(ngModel)]="searchText" 
+           placeholder="Search notes..." 
+           (input)="searchNotes()"/>
+
+    <div *ngFor="let note of notes" (click)="selectNote(note)">
+        <app-note [note]="note"></app-note>
+    </div>
+    <button class="btn btn-outline-dark"
+            (click)="addNote()">
+        Add note
+    </button>
+</div>
