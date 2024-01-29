@@ -1,5 +1,9 @@
+.container {
+    height: 100hv;
+    background-color:brown;
+}
+
 .notes-list-section-container {
-    border-left-style: solid;
     border-right-style: solid;
     border-width: 1px;
 }

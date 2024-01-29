@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { NotesComponent } from './components/shared/notes/notes.component';
 import { NoteComponent } from './components/shared/note/note.component';
-import { CategoriesComponent } from './components/shared/categories/categories.component';
 import { FormsModule } from '@angular/forms';
 import { NoteEditorComponent } from './components/shared/note-editor/note-editor.component';
 
@@ -18,7 +17,6 @@ import { NoteEditorComponent } from './components/shared/note-editor/note-editor
     HomeComponent,
     NotesComponent,
     NoteComponent,
-    CategoriesComponent,
     NoteEditorComponent
   ],
   imports: [

@@ -48,7 +48,7 @@ export class NoteEditorComponent {
   protected resetAutoSaveTimer() {
     clearTimeout(this.autoSaveTimer); // Clear existing timer
     this.autoSaveTimer = setTimeout(() => {
-      this.saveChanges(); // Save changes after 2 seconds of inaction
-    }, 2000);
+      this.saveChanges(); // Save changes after 1 second of inaction
+    }, 1000);
   }
 }

@@ -26,12 +26,16 @@ export class NoteService {
     this.selectedNoteSubject.next(note);
   }
 
-  getNoteById (id?: number) : Observable<NoteDto> {
+  getNoteById(id?: number) : Observable<NoteDto> {
     return this.http.get<NoteDto>(`${environment.apiUrl}/${this.url}/${id}`);
   }
 
-  getNotes () : Observable<Array<NoteDto>> {
+  getNotes() : Observable<Array<NoteDto>> {
     return this.http.get<Array<NoteDto>>(`${environment.apiUrl}/${this.url}`);
+  }
+
+  getNotesByCategoryId(categoryId?: number) : Observable<Array<NoteDto>> {
+    return this.http.get<Array<NoteDto>>(`${environment.apiUrl}/${this.url}/${categoryId}/get-by-category-id`);
   }
 
   searchNotes (searchText: string) : Observable<Array<NoteDto>> {

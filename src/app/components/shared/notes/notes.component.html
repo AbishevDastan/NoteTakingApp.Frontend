@@ -1,14 +1,27 @@
-<div class="notes-section-container">
-    <input type="text" 
-           [(ngModel)]="searchText" 
-           placeholder="Search notes..." 
-           (input)="searchNotes()"/>
-
-    <div *ngFor="let note of notes" (click)="selectNote(note)">
-        <app-note [note]="note"></app-note>
+<div class="container">
+    <div class="row">
+        <div class="categories-section-container col-md-6">
+            <div *ngFor="let category of categories" 
+                 (click)="selectCategory(category.id)">
+                 <div class="category">
+                    <h3>{{ category.name }}</h3>
+                 </div>
+            </div>
+        </div>
+        
+        <div class="notes-section-container col-md-6">
+            <div class="search-bar-container">
+                    <i class="bi bi-search search-icon no-transition"></i>
+                <input type="text"
+                       class="search-input" 
+                       [(ngModel)]="searchText" 
+                       placeholder="Search notes..." 
+                       (input)="searchNotes()"/>
+            </div>
+        
+            <div class="note" *ngFor="let note of notes" (click)="selectNote(note)">
+                <app-note [note]="note"></app-note>
+            </div>
+        </div>
     </div>
-    <button class="btn btn-outline-dark"
-            (click)="addNote()">
-        Add note
-    </button>
 </div>
